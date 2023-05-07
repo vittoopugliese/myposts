@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react"
 
 export const Header = ({ page, onPage }) => {
