@@ -1,10 +1,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/prop-types */
+
 const PostCard = ({ title, description, image, date, timeRead, url }) => {
+
+    function goToPostPage(url){
+        
+    }
+
     return (
         <>
-            <div className="postCard">
+            <div className="postCard" onClick={() => goToPostPage(url)}>
                 <img className="postCardImage" src={image} />
                 <div className="postCardTextsContainer">
                     <a className="postCardTitle">{title}</a>
