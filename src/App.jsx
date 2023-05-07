@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Header } from './components/Header'
 import { Home } from './pages/Home'
-import { AllPosts } from './pages/AllPosts'
+import { Posts } from './pages/Posts'
 import { About } from './pages/About'
 
 
@@ -14,7 +14,7 @@ const [page, setPage] = useState('home')
       <Header page={page}  onPage={e => setPage(e)}/>
 
       {page == 'home' && <Home />}
-      {page == 'allPosts' && <AllPosts />}
+      {page == 'posts' && <Posts />}
       {page == 'aboutMe' && <About />}
 
     </>

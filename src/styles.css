@@ -3,10 +3,21 @@
   margin: 0px;
   box-sizing: border-box;
   outline: none;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 28px;
   font-family: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Arial, sans-serif;
+}
+
+:root {
+  --main: #ec5717;
+  --sec: #ff7520;
+  --grey: grey;
+  --margin-small-1: 20px;
+  --margin-small-2: 30px;
+  --margin-medium-1: 40px;
+  --margin-medium-2: 50px;
+  --margin-large-1: 60px;
+  --margin-large-2: 70px;
 }
 
 a {
@@ -24,19 +35,23 @@ html {
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   color: whitesmoke;
-  /* background: linear-gradient(220.55deg, #565656 0%, #181818 100%); */
+  background: linear-gradient(20deg, #4b4b4b 0%, #0f0f0f 100%);
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 74px;
-  width: 92%;
+  width: 100%;
   margin: 0px auto;
+  padding: 18px;
 }
 
 a {
@@ -47,9 +62,7 @@ a {
 
 .navItems {
   display: flex;
-  gap: 28px;
-  position: relative;
-  right: 64px;
+  gap: 32px;
 }
 
 .navItems a {
@@ -58,6 +71,25 @@ a {
 }
 
 .navName {
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  z-index: 1200;
+  font-size: 32px;
+}
+
+.navButton {
+  transition: all 0.15s ease-in-out;
+  color: black;
+  background: var(--sec);
+  border-style: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 24px;
+  margin: 5px;
 }
 
 .navTogglerContainer {
@@ -83,13 +115,8 @@ a {
   background-color: rgb(194, 194, 194);
 }
 
-.navToggle:active span {
+.spanactive {
   rotate: 180deg;
-  background-color: white;
-}
-
-.navToggle:hover {
-  gap: 8px;
 }
 
 .modalBackground {
@@ -99,7 +126,7 @@ a {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,14 +151,35 @@ a {
 }
 
 .navSearch {
+  display: flex;
   cursor: pointer;
+  align-items: center;
+  z-index: 1200;
+  justify-content: flex-end;
+}
+
+.navSearchWidth {
+  width: 260px;
 }
 
 .navSearch img {
-  position: relative;
-  top: 3px;
   filter: invert(1) brightness(1.1);
 }
+
+.navButton {
+  transition: all 0.15s ease-in-out;
+  color: black;
+  background: white;
+  border-style: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px;
+  margin: 12px;
+}
+
+/* search */
 
 .navTitleAndEmailContainer {
   display: flex;
@@ -143,43 +191,45 @@ a {
 
 .navTitleAndEmailContainer h1 {
   font-size: 30px;
-  margin: 32px 0px;
-  width: 75%;
+  font-weight: 400;
+  width: 70%;
+  margin-top: var(--margin-small-1);
+  margin-bottom: var(--margin-small-2);
 }
 
 .navTitleAndEmailContainer span {
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .navEmailContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 64%;
+  width: 84%;
   max-width: 540px;
   background-color: white;
   border-radius: 8px;
   padding: 0px 4px;
-  margin-bottom: 24px;
+  margin-bottom: var(--margin-medium-1);
 }
 
 .navEmailContainer input {
   color: black;
   border-style: none;
   width: 100%;
-  font-size: 20px;
   font-weight: 400;
   margin-left: 6px;
+  font-size: 16px;
 }
 
 .navEmailContainer button {
   transition: all 0.15s ease-in-out;
   color: black;
+  background: var(--sec);
   border-style: none;
-  background: grey;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   padding: 8px 24px;
   margin: 5px;
@@ -195,7 +245,7 @@ main {
   margin: 0px auto;
   display: flex;
   flex-direction: column;
-  max-width: 640px;
+  max-width: 780px;
 }
 
 .latestPosts {
@@ -227,8 +277,8 @@ main {
 }
 
 .postImage {
-  width: 180px;
-  height: 120px;
+  width: 175px;
+  height: 175px;
   border-radius: 6px;
   filter: brightness(0.75);
 }
@@ -256,4 +306,39 @@ main {
 
 .postDate {
   font-size: 12px;
+}
+
+@media (max-width: 400px) {
+  .navName {
+    font-size: 24px;
+  }
+  nav {
+  }
+
+  .navTitleAndEmailContainer h1 {
+    width: 90%;
+  }
+
+  .navTitleAndEmailContainer span {
+  }
+  .navEmailContainer {
+  }
+
+  .navEmailContainer input {
+  }
+
+  .navEmailContainer button {
+    padding: 6px 10px;
+  }
+
+  .post{
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .postImage {
+    width: 180px;
+    height: 180px;
+  }
 }
