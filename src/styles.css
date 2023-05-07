@@ -1,0 +1,259 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+}
+
+a {
+  cursor: pointer;
+  transition: all 0.03s ease-in-out;
+}
+
+*::selection {
+  background-color: grey;
+}
+
+html {
+  /* overflow-y: hidden; */
+  scroll-behavior: smooth;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  /* background: linear-gradient(220.55deg, #565656 0%, #181818 100%); */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+  width: 92%;
+  margin: 0px auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+  transition: all 0.1s ease-in-out;
+}
+
+.navItems {
+  display: flex;
+  gap: 28px;
+  position: relative;
+  right: 64px;
+}
+
+.navItems a {
+  color: white;
+  font-size: 17px;
+}
+
+.navName {
+}
+
+.navTogglerContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.navToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 6px;
+  transition: all 0.25s ease-in-out;
+  z-index: 1100;
+}
+
+.navToggle span {
+  transition: all 0.25s ease-in-out;
+  width: 24px;
+  height: 2px;
+  background-color: rgb(194, 194, 194);
+}
+
+.navToggle:active span {
+  rotate: 180deg;
+  background-color: white;
+}
+
+.navToggle:hover {
+  gap: 8px;
+}
+
+.modalBackground {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalItemsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1100;
+  gap: 12px;
+}
+
+.modalItemsContainer a {
+  font-size: 38px;
+}
+
+.modalItemsContainer a:hover {
+  font-size: 44px;
+}
+
+.navSearch {
+  cursor: pointer;
+}
+
+.navSearch img {
+  position: relative;
+  top: 3px;
+  filter: invert(1) brightness(1.1);
+}
+
+.navTitleAndEmailContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.navTitleAndEmailContainer h1 {
+  font-size: 30px;
+  margin: 32px 0px;
+  width: 75%;
+}
+
+.navTitleAndEmailContainer span {
+  font-size: 26px;
+}
+
+.navEmailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64%;
+  max-width: 540px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0px 4px;
+  margin-bottom: 24px;
+}
+
+.navEmailContainer input {
+  color: black;
+  border-style: none;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.navEmailContainer button {
+  transition: all 0.15s ease-in-out;
+  color: black;
+  border-style: none;
+  background: grey;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 24px;
+  margin: 5px;
+}
+
+.navEmailContainer button:hover {
+  scale: 1.1;
+}
+
+/* Body starts */
+main {
+  width: 98%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+}
+
+.latestPosts {
+  color: black;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.postsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  margin: 12px auto;
+}
+
+.post {
+  display: flex;
+  cursor: pointer;
+  transition: all 50ms ease-in-out;
+  margin: 8px 0px;
+}
+
+.post:hover {
+  transform: scale(1.03);
+}
+
+.post:hover .postTitle {
+  color: rgb(74, 74, 74);
+}
+
+.postImage {
+  width: 180px;
+  height: 120px;
+  border-radius: 6px;
+  filter: brightness(0.75);
+}
+
+.postTextsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  top: -16px;
+  margin: 10px;
+  gap: 4px;
+}
+
+.postTitle {
+  color: black;
+  text-decoration: none !important;
+  transition: all 0.1s ease-in-out;
+  font-size: 21px;
+}
+
+.postDesc {
+  font-size: 16px;
+}
+
+.postDate {
+  font-size: 12px;
+}
