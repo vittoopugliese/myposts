@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable react/prop-types */
 
 // call to all posts
 let postdescrip = "Hi, it's Takuya here. I've been working on preparing to submit my mobile app with In-App Purchase support to the App Store. I'd like to share some tips on that."
