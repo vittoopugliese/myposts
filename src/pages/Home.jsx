@@ -1,9 +1,9 @@
-import { Body } from "../components/Body"
+import { LatestPosts } from "../components/Posts/LatestPosts"
 
 export const Home = () => {
     return (
         <>
-            <Body />
+            <LatestPosts />
         </>
     )
 }

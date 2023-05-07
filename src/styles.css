@@ -51,7 +51,7 @@ nav {
   align-items: center;
   width: 100%;
   margin: 0px auto;
-  padding: 18px;
+  padding: 14px;
 }
 
 a {
@@ -76,26 +76,26 @@ a {
   font-weight: 700;
   letter-spacing: 0.6px;
   z-index: 1200;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .navButton {
   transition: all 0.15s ease-in-out;
   color: black;
-  background: var(--sec);
+  background: white;
   border-style: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 700;
-  padding: 8px 24px;
-  margin: 5px;
+  font-weight: 600;
+  padding: 8px;
+  margin: 12px;
 }
 
 .navTogglerContainer {
   display: flex;
   flex-direction: row;
-  gap: 14px;
+  gap: 18px;
 }
 
 .navToggle {
@@ -119,37 +119,6 @@ a {
   rotate: 180deg;
 }
 
-.modalBackground {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modalItemsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 1100;
-  gap: 12px;
-}
-
-.modalItemsContainer a {
-  font-size: 38px;
-}
-
-.modalItemsContainer a:hover {
-  font-size: 44px;
-}
-
 .navSearch {
   display: flex;
   cursor: pointer;
@@ -164,19 +133,38 @@ a {
 
 .navSearch img {
   filter: invert(1) brightness(1.1);
+  scale: 0.9;
 }
 
-.navButton {
-  transition: all 0.15s ease-in-out;
-  color: black;
-  background: white;
-  border-style: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px;
-  margin: 12px;
+.modalBackground {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: linear-gradient(20deg, #4b4b4b 0%, #0f0f0f 100%);
+}
+
+.modalItemsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1100;
+  gap: 6px;
+}
+
+.modalItemsContainer a {
+  font-size: 38px;
+}
+
+.modalItemsContainer a:hover {
+  font-size: 42px;
 }
 
 /* search */
@@ -254,36 +242,36 @@ main {
   font-size: 20px;
 }
 
-.postsContainer {
+.postsCardContainer {
   display: flex;
   flex-direction: column;
   width: 94%;
   margin: 12px auto;
 }
 
-.post {
+.postCard {
   display: flex;
   cursor: pointer;
   transition: all 50ms ease-in-out;
   margin: 8px 0px;
 }
 
-.post:hover {
+.postCard:hover {
   transform: scale(1.03);
 }
 
-.post:hover .postTitle {
+.postCard:hover .postTitle {
   color: rgb(74, 74, 74);
 }
 
-.postImage {
+.postCardImage {
   width: 175px;
   height: 175px;
   border-radius: 6px;
   filter: brightness(0.75);
 }
 
-.postTextsContainer {
+.postCardTextsContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -293,19 +281,46 @@ main {
   gap: 4px;
 }
 
-.postTitle {
+.postCardTitle {
   color: black;
   text-decoration: none !important;
   transition: all 0.1s ease-in-out;
   font-size: 21px;
+  font-weight: 600;
 }
 
-.postDesc {
+.postCardDesc {
   font-size: 16px;
 }
 
-.postDate {
+.postCardDate {
   font-size: 12px;
+}
+
+/* postcardEnds, now individual post styles */
+
+.postContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 94%;
+  margin: 0px auto;
+}
+.postDate, b {
+  font-size: 14px;
+  margin-top: var(--margin-small-1);
+}
+.postTitle {
+  text-align: center;
+  font-size: 28px;
+}
+.postContainer img {
+  width: 220px;
+}
+.postDescrip {
+  font-size: 20px
 }
 
 @media (max-width: 400px) {
@@ -331,13 +346,13 @@ main {
     padding: 6px 10px;
   }
 
-  .post{
+  .postCard {
     flex-direction: column;
     align-items: center;
     gap: 18px;
   }
 
-  .postImage {
+  .postCardImage {
     width: 180px;
     height: 180px;
   }

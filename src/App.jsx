@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Header } from './components/Header'
+import { Header } from './components/Header/Header'
 import { Home } from './pages/Home'
 import { Posts } from './pages/Posts'
 import { About } from './pages/About'
 
-
+// todo subscribe button 
 const App = () => {
 
 const [page, setPage] = useState('home')
@@ -15,7 +15,7 @@ const [page, setPage] = useState('home')
 
       {page == 'home' && <Home />}
       {page == 'posts' && <Posts />}
-      {page == 'aboutMe' && <About />}
+      {page == 'about' && <About />}
 
     </>
   )
