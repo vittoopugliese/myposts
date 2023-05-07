@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react"
 
 export const Header = ({ page, onPage }) => {
@@ -6,13 +8,13 @@ export const Header = ({ page, onPage }) => {
   if (page !== 'home') showSub = false
   const soundcloud = 'https://soundcloud.com/vittoopugliese'
   // inizializa en condicion, devuelve estado actual al refres
-  const [showNavItems, setShowNavItems] = useState(window.innerWidth < 740)
+  const [showNavItems, setShowNavItems] = useState(window.innerWidth < 875)
 
   useEffect(() => {
     window.addEventListener('resize', handleToggle)
 
     function handleToggle() {
-      (window.innerWidth > 740) ? setShowNavItems(false) : setShowNavItems(true)
+      (window.innerWidth > 875) ? setShowNavItems(false) : setShowNavItems(true)
     }
 
     return () => {
@@ -39,52 +41,50 @@ export const Header = ({ page, onPage }) => {
       <header>
         <nav>
           <p className="navName">Vittorio Pugliese</p>
-
           {!showNavItems && (
+            <>
             <div className="navItems">
-              <a onClick={() => navigate('home')} href="#">Home</a>
-              <a onClick={() => navigate('allPosts')} href="#">All Posts</a>
-              <a onClick={() => navigate('aboutMe')} href="#">About Me</a>
-              <a href={soundcloud} target="_blank">SoundCloud</a>
+              <a onClick={() => navigate('home')}>home</a>
+              <a onClick={() => navigate('posts')}>posts</a>
+              <a onClick={() => navigate('about')}>about</a>
+              <a target="_blank" href={soundcloud}>soundcloud</a>
             </div>
-          )}
-
-          <div className="navTogglerContainer">
+            <div className={!navToggler ? 'navSearch navSearchWidth' : 'navSearch'}>
+              <img src="src/assets/search-alt.svg" width={'30px'} />
+              <button className="navButton">subscribe!</button>
+            </div>
+            </>
+          )}          
 
             {showNavItems && (
-              <>
-                <div className="navSearch">
-                  <img src="src/assets/search-alt.svg" width={'30px'} />
-                </div>
-                <div className="navToggle" onClick={() => openNavToggler('open')}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </>
+              <div className="navTogglerContainer">
+                  <div className="navSearch">
+                    <img src="src/assets/search-alt.svg" width={'30px'} />
+                  </div>
+                  <div className={navToggler ? 'navToggle spanactive' : 'navToggle'} onClick={() => openNavToggler('open')}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+              </div>
             )}
 
-            {
-              (showNavItems && navToggler) && (
-                <>
-                  <div className="modalBackground" onClick={() => openNavToggler('close')}>
-                    <div className="modalItemsContainer">
-                      <a onClick={() => onPage('home')}>Home</a>
-                      <a onClick={() => onPage('allPosts')}>All Posts</a>
-                      <a onClick={() => onPage('aboutMe')}>About Me</a>
-                      <a href={soundcloud} target="_blank">SoundCloud</a>
-                    </div>
+            {(showNavItems && navToggler) && (
+                <div className="modalBackground" onClick={() => openNavToggler('close')}>
+                  <div className="modalItemsContainer">
+                    <a onClick={() => onPage('home')}>home</a>
+                    <a onClick={() => onPage('posts')}>posts</a>
+                    <a onClick={() => onPage('about')}>about</a>
+                    <a target="_blank" href={soundcloud}>soundcloud</a>
                   </div>
-                </>
-              )
-            }
+                </div>
+              )}
 
-          </div>
         </nav>
 
         {showSub && (
           <div className="navTitleAndEmailContainer">
-            <h1>Join and travel around my blog. <br /> <span>Get notified every post!</span></h1>
+            <h1>Join and travel around my blog... <br /> <span>Get notified every post!</span></h1>
             <div className="navEmailContainer">
               <input type="text" placeholder="Your email address..." />
               <button>Subscribe</button>

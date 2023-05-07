@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable react/prop-types */
 const Post = ({ title, description, image, date, timeRead, url }) => {
     return (
         <>
