@@ -1,0 +1,359 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 28px;
+  font-family: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif;
+}
+
+:root {
+  --main: #ec5717;
+  --sec: #ff7520;
+  --grey: grey;
+  --margin-small-1: 20px;
+  --margin-small-2: 30px;
+  --margin-medium-1: 40px;
+  --margin-medium-2: 50px;
+  --margin-large-1: 60px;
+  --margin-large-2: 70px;
+}
+
+a {
+  cursor: pointer;
+  transition: all 0.03s ease-in-out;
+}
+
+*::selection {
+  background-color: grey;
+}
+
+html {
+  /* overflow-y: hidden; */
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  background: linear-gradient(20deg, #4b4b4b 0%, #0f0f0f 100%);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0px auto;
+  padding: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+  transition: all 0.1s ease-in-out;
+}
+
+.navItems {
+  display: flex;
+  gap: 32px;
+}
+
+.navItems a {
+  color: white;
+  font-size: 17px;
+}
+
+.navName {
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  z-index: 1200;
+  font-size: 28px;
+}
+
+.navButton {
+  transition: all 0.15s ease-in-out;
+  color: black;
+  background: white;
+  border-style: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px;
+  margin: 12px;
+}
+
+.navTogglerContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+}
+
+.navToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 6px;
+  transition: all 0.25s ease-in-out;
+  z-index: 1100;
+}
+
+.navToggle span {
+  transition: all 0.25s ease-in-out;
+  width: 24px;
+  height: 2px;
+  background-color: rgb(194, 194, 194);
+}
+
+.spanactive {
+  rotate: 180deg;
+}
+
+.navSearch {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  z-index: 1200;
+  justify-content: flex-end;
+}
+
+.navSearchWidth {
+  width: 260px;
+}
+
+.navSearch img {
+  filter: invert(1) brightness(1.1);
+  scale: 0.9;
+}
+
+.modalBackground {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: linear-gradient(20deg, #4b4b4b 0%, #0f0f0f 100%);
+}
+
+.modalItemsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1100;
+  gap: 6px;
+}
+
+.modalItemsContainer a {
+  font-size: 38px;
+}
+
+.modalItemsContainer a:hover {
+  font-size: 42px;
+}
+
+/* search */
+
+.navTitleAndEmailContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.navTitleAndEmailContainer h1 {
+  font-size: 30px;
+  font-weight: 400;
+  width: 70%;
+  margin-top: var(--margin-small-1);
+  margin-bottom: var(--margin-small-2);
+}
+
+.navTitleAndEmailContainer span {
+  font-size: 22px;
+}
+
+.navEmailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84%;
+  max-width: 540px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0px 4px;
+  margin-bottom: var(--margin-medium-1);
+}
+
+.navEmailContainer input {
+  color: black;
+  border-style: none;
+  width: 100%;
+  font-weight: 400;
+  margin-left: 6px;
+  font-size: 16px;
+}
+
+.navEmailContainer button {
+  transition: all 0.15s ease-in-out;
+  color: black;
+  background: var(--sec);
+  border-style: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 8px 24px;
+  margin: 5px;
+}
+
+.navEmailContainer button:hover {
+  scale: 1.1;
+}
+
+/* Body starts */
+main {
+  width: 98%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 780px;
+}
+
+.latestPosts {
+  color: black;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.postsCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  margin: 12px auto;
+}
+
+.postCard {
+  display: flex;
+  cursor: pointer;
+  transition: all 50ms ease-in-out;
+  margin: 8px 0px;
+}
+
+.postCard:hover {
+  transform: scale(1.03);
+}
+
+.postCard:hover .postTitle {
+  color: rgb(74, 74, 74);
+}
+
+.postCardImage {
+  width: 175px;
+  height: 175px;
+  border-radius: 6px;
+  filter: brightness(0.75);
+}
+
+.postCardTextsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  top: -16px;
+  margin: 10px;
+  gap: 4px;
+}
+
+.postCardTitle {
+  color: black;
+  text-decoration: none !important;
+  transition: all 0.1s ease-in-out;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.postCardDesc {
+  font-size: 16px;
+}
+
+.postCardDate {
+  font-size: 12px;
+}
+
+/* postcardEnds, now individual post styles */
+
+.postContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 94%;
+  margin: 0px auto;
+}
+.postDate, b {
+  font-size: 14px;
+  margin-top: var(--margin-small-1);
+}
+.postTitle {
+  text-align: center;
+  font-size: 28px;
+}
+.postContainer img {
+  width: 220px;
+}
+.postDescrip {
+  font-size: 20px
+}
+
+@media (max-width: 400px) {
+  .navName {
+    font-size: 24px;
+  }
+  nav {
+  }
+
+  .navTitleAndEmailContainer h1 {
+    width: 90%;
+  }
+
+  .navTitleAndEmailContainer span {
+  }
+  .navEmailContainer {
+  }
+
+  .navEmailContainer input {
+  }
+
+  .navEmailContainer button {
+    padding: 6px 10px;
+  }
+
+  .postCard {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .postCardImage {
+    width: 180px;
+    height: 180px;
+  }
+}
